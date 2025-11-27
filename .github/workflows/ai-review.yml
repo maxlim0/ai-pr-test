@@ -11,7 +11,7 @@ jobs:
       - uses: maxlim0/AI-PR-Reviewer@v0.1
         with:
           openrouter_api_key: ${{ secrets.OPENROUTER_API_KEY }}
-          model: "openai/gpt-4o"
+          model: "x-ai/grok-4.1-fast:free"
           prompt_template: |
             Проанализируй следующий diff и опиши все проблемы:
             {{DIFF}}
