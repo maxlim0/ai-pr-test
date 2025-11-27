@@ -1,5 +1,9 @@
 name: AI PR Review Test
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   pull_request:
     types: [opened, synchronize]
@@ -9,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: maxlim0/AI-PR-Reviewer@v0.1
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           openrouter_api_key: ${{ secrets.OPENROUTER_API_KEY }}
           model: "x-ai/grok-4.1-fast:free"
