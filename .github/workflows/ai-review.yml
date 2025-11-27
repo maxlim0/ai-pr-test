@@ -1,0 +1,17 @@
+name: AI PR Review Test
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: maxlim0/AI-PR-Reviewer@v0.1
+        with:
+          openrouter_api_key: ${{ secrets.OPENROUTER_API_KEY }}
+          model: "openai/gpt-4o"
+          prompt_template: |
+            Проанализируй следующий diff и опиши все проблемы:
+            {{DIFF}}
