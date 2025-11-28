@@ -19,5 +19,5 @@ jobs:
           openrouter_api_key: ${{ secrets.OPENROUTER_API_KEY }}
           model: "x-ai/grok-4.1-fast:free"
           prompt_template: |
-            Проанализируй следующий diff и опиши все проблемы:
+            Analyze next  diff check the problems if any describe them shortly. Not more then 200 words:
             {{DIFF}}
