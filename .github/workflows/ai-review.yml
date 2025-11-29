@@ -4,6 +4,10 @@ permissions:
   contents: read
   pull-requests: write
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   pull_request:
     types: [opened, synchronize]
@@ -12,12 +16,14 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - uses: maxlim0/AI-PR-Reviewer@v0.1
+      - uses: maxlim0/AI-PR-Reviewer@v0.3
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           openrouter_api_key: ${{ secrets.OPENROUTER_API_KEY }}
           model: "x-ai/grok-4.1-fast:free"
+          model: "x-ai/grok-4.1-fast:free"
           prompt_template: |
+            Analyze the next diff check the problems if any describe them shortly. Not more than 200 words:
             Analyze the next diff check the problems if any describe them shortly. Not more than 200 words:
             {{DIFF}}
