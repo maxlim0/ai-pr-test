@@ -2,7 +2,6 @@ name: AI CI Failure Demo
 
 on:
   push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -20,7 +19,7 @@ jobs:
 
       - name: Step 3 - AI failure helper
         if: always()
-        uses: maxlim0/actions-progci-fail@v0.1
+        uses: maxlim0/actions-progci-fail@v0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
