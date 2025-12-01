@@ -10,6 +10,7 @@ jobs:
     permissions:
       actions: read
       contents: read
+      pull-requests: write
     steps:
       - name: Step 1 - always succeeds
         run: echo "Hello from the first step"
