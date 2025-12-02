@@ -36,4 +36,5 @@ jobs:
             {{LOG}}
 
             Explain the likely root cause and suggest concrete fixes.
+            Explanation no longer than 200 words.
           max_log_lines: 200
